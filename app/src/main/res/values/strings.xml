@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">simple pos</string>
+    <string name="title_sell">Jualan</string>
+    <string name="title_product">Barang</string>
+    <string name="title_scan_product">scan barang</string>
+    <string name="title_add_cart">Tambah ke keranjang</string>
+    <string name="title_scan">Barcode</string>
+    <string name="title_search">Cari</string>
+    <string name="label_stock">Stok</string>
+    <string name="label_price">Harga</string>
+    <string name="label_save">Simpan</string>
+    <string name="label_use_code">Gunakan Kode</string>
+    <string name="label_read_code">"Kode Terbaca : "</string>
+    <string name="label_rescan">Scan Ulang</string>
+    <string name="label_product_name">Nama</string>
+    <string name="label_research">Cari lagi</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_reset_search_product">Ganti Barang Lain</string>
+    <string name="label_stock_empty">Stok habis</string>
+    <string name="label_stock_few">Stok Sedikit</string>
+    <string name="label_stock_many">Stok Banyak</string>
+    <string name="label_edit">Edit</string>
+    <string name="label_delete">Hapus</string>
+    <string name="label_cancel">Cancel</string>
+    <string name="label_reset_order">Kosongkan Keranjang</string>
+    <string name="label_save_order">Simpan Penjualan</string>
+    <string name="label_add">Tambah</string>
+    <string name="label_remove">Kurangi</string>
+    <string name="title_report">Laporan</string>
+    <string name="label_report_total_sell">Total Penjualan</string>
+    <string name="label_clear_data_order">Hapus data penjualan</string>
+    <string name="label_app_name">simple pos</string>
+
+    <style name="label_sell_done">Selesai</style>
+
+    <string-array name="period_array">
+        <item>Harian</item>
+        <item>Bulanan</item>
+        <item>Tahunan</item>
+    </string-array>
+</resources>

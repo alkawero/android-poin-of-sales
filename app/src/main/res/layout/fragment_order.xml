@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".orders.OrderFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/empty_cart_animation"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="4"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@+id/btn_scan_product"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBar"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/empty_cart" />
+        <Button
+            android:id="@+id/btn_scan_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_rounded"
+            android:text="@string/title_scan"
+            android:textColor="@color/design_default_color_on_primary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/order_btn_pay_option"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/report_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:title="Keranjang Belanja"
+                app:titleTextColor="#FFFFFF" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <Button
+            android:id="@+id/btn_search_product"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_rounded"
+            android:text="@string/title_search"
+            android:textColor="@color/design_default_color_on_primary"
+            app:layout_constraintBaseline_toBaselineOf="@+id/order_btn_pay_option"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/order_btn_pay_option" />
+
+        <TextView
+            android:id="@+id/text_total"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_horizontal"
+            android:textAlignment="viewStart"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_scan_product"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/order_btn_pay_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_rounded"
+            android:padding="8dp"
+            android:text="Pembayaran"
+            android:textColor="#FFFFFF"
+            android:visibility="gone"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btn_scan_product"
+            app:layout_constraintEnd_toStartOf="@+id/btn_search_product"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_scan_product" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/orderList"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/text_total"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appBar" />
+
+        <TextView
+            android:id="@+id/order_text_empty_cart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Keranjang belanja kosong"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/empty_cart_animation" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<include layout="@layout/bottom_sheet_pay_option" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

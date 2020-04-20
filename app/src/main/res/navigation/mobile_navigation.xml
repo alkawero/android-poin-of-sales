@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_order">
+
+    <fragment
+        android:id="@+id/navigation_order"
+        android:name="com.simplepos.orders.OrderFragment"
+        android:label="@string/title_sell"
+        tools:layout="@layout/fragment_order" >
+        <action
+            android:id="@+id/action_navigation_order_to_navigation_product"
+            app:destination="@id/navigation_product" />
+        <action
+            android:id="@+id/action_navigation_order_to_searchProductFragment"
+            app:destination="@id/searchProductFragment" />
+        <action
+            android:id="@+id/action_navigation_order_to_scanProductFragment"
+            app:destination="@id/scanProductFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_product"
+        android:name="com.simplepos.products.ProductFragment"
+        android:label="@string/title_product"
+        tools:layout="@layout/fragment_product" >
+        <action
+            android:id="@+id/action_navigation_product_to_productEditFragment"
+            app:destination="@id/productEditFragment" />
+        <action
+            android:id="@+id/action_navigation_product_to_navigation_report"
+            app:destination="@id/navigation_report" />
+        <action
+            android:id="@+id/action_navigation_product_to_productAddFragment"
+            app:destination="@id/productAddFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchProductFragment"
+        android:name="com.simplepos.orders.SearchProductFragment"
+        android:label="search_product_fragment"
+        tools:layout="@layout/fragment_search_product" >
+        <action
+            android:id="@+id/action_searchProductFragment_to_navigation_order"
+            app:destination="@id/navigation_order"
+            app:popUpTo="@id/searchProductFragment"
+            app:popUpToInclusive="true"
+            app:launchSingleTop="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/scanProductFragment"
+        android:name="com.simplepos.orders.ScanProductFragment"
+        android:label="fragment_scan_product"
+        tools:layout="@layout/fragment_scan_product" >
+        <action
+            android:id="@+id/action_scanProductFragment_to_navigation_order"
+            app:destination="@id/navigation_order"
+            app:popUpTo="@id/scanProductFragment"
+            app:popUpToInclusive="true"
+            app:launchSingleTop="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/productEditFragment"
+        android:name="com.simplepos.products.ProductEditFragment"
+        android:label="fragment_product_edit"
+        tools:layout="@layout/fragment_product_edit" >
+        <action
+            android:id="@+id/action_productEditFragment_to_navigation_product"
+            app:destination="@id/navigation_product"
+            app:popUpTo="@id/productEditFragment"
+            app:popUpToInclusive="true"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_productEditFragment_to_scanBarcodeFragment"
+            app:destination="@id/scanBarcodeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_report"
+        android:name="com.simplepos.reports.ReportFragment"
+        android:label="ReportFragment" >
+        <action
+            android:id="@+id/action_navigation_report_to_navigation_product"
+            app:destination="@id/navigation_product" />
+    </fragment>
+    <fragment
+        android:id="@+id/scanBarcodeFragment"
+        android:name="com.simplepos.products.ScanBarcodeFragment"
+        android:label="fragment_scan_barcode"
+        tools:layout="@layout/fragment_scan_barcode" >
+        <action
+            android:id="@+id/action_scanBarcodeFragment_to_productEditFragment"
+            app:destination="@id/productEditFragment"
+            app:popUpTo="@id/scanBarcodeFragment"
+            app:popUpToInclusive="true"
+            app:launchSingleTop="true" />
+        <action
+            android:id="@+id/action_scanBarcodeFragment_to_productAddFragment"
+            app:destination="@id/productAddFragment"
+            app:popUpTo="@id/scanBarcodeFragment"
+            app:popUpToInclusive="true"
+            app:launchSingleTop="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/productAddFragment"
+        android:name="com.simplepos.products.ProductAddFragment"
+        android:label="fragment_product_add"
+        tools:layout="@layout/fragment_product_add" >
+        <action
+            android:id="@+id/action_productAddFragment_to_scanBarcodeFragment"
+            app:destination="@id/scanBarcodeFragment" />
+        <action
+            android:id="@+id/action_productAddFragment_to_navigation_product"
+            app:destination="@id/navigation_product"
+            app:popUpTo="@id/productAddFragment"
+            app:popUpToInclusive="true"
+            app:launchSingleTop="true" />
+    </fragment>
+
+
+</navigation>
